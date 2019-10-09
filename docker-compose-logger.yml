@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  demo-logger:
+    image: alpine
+    networks:
+      - private
+    entrypoint: |
+      sh -c 'sh -s << EOF
+      while true
+        do
+          echo "The date is: $$(date +%s)"
+          sleep 5
+        done
+      EOF'
+    logging:
+      driver: fluentd
+      options:
+        tag: docker.efk.demo-logger
+        fluentd-async-connect: "true"
+
+networks:
+  private:
+    external: true
