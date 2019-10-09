@@ -3,6 +3,13 @@ Elasticsearch, FluentD and Kibana
 
 ## Description
 
+Get the sources:
+
+```
+$ git clone https://github.com/bekkerstacks/elasticsearch-fluentd-kibana
+$ cd elasticsearch-fluentd-kibana
+```
+
 Push logs from your containers to elasticsearch with fluentd.
 
 ## Usage
