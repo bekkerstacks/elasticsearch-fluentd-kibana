@@ -1,7 +1,13 @@
 # elasticsearch-fluentd-kibana
-Elasticsearch FluentD and Kibana
+Elasticsearch, FluentD and Kibana
+
+## Description
+
+Push logs from your containers to elasticsearch with fluentd.
 
 ## Usage
+
+Create a overlay network:
 
 ```
 $ docker network create --driver overlay private
@@ -10,7 +16,7 @@ $ docker network create --driver overlay private
 Deploy the elasticsearch-fluentd-kibana stack:
 
 ```
-$ docker stack deploy -c docker-compose-eflk.yml efk
+$ docker stack deploy -c docker-compose.yml efk
 Creating config efk_fluent-elasticsearch-conf.v1
 Creating service efk_fluentd-elasticsearch
 Creating service efk_kibana
@@ -20,7 +26,7 @@ Creating service efk_elasticsearch
 Deploy the sample application that logs info to stdout every 5 seconds:
 
 ```
-$ docker stack deploy -c docker-compose-eflk-app.yml efk
+$ docker stack deploy -c docker-compose-logger.yml efk
 Creating service efk_demo-logger
 ```
 
